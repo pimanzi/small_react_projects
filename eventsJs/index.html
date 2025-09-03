@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Propagation Demo</title>
+    <style>
+      .box {
+        padding: 40px;
+        margin: 10px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer" class="box" style="background-color: lightcoral">
+      Outer
+      <div id="middle" class="box" style="background-color: lightblue">
+        Middle
+        <div id="inner" class="box" style="background-color: lightgreen">
+          Inner
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

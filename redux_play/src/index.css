@@ -1,0 +1,18 @@
+input {
+  padding: 8px;
+}
+
+button {
+  padding: 8px;
+}
+
+.user {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  padding-block: 8px;
+  padding-inline: 20px;
+  margin-right: 10px;
+}

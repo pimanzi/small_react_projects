@@ -1,9 +1,21 @@
 import type TodoItem from '@/models/todoItem';
+import { addTask } from '@/store/tasksSlice';
+
 import { Plus } from 'lucide-react';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { toast } from 'sonner';
 
-function Form({ addItem }: { addItem: (item: TodoItem) => void }) {
+function Form() {
+  const dispatch = useDispatch();
   const [task, setTask] = useState<string>('');
+
+  function handleAddItem(item: TodoItem) {
+    dispatch(addTask(item));
+
+    toast.success('Task created successfully');
+  }
+
   function add(text: string, e: React.FormEvent) {
     e.preventDefault();
     if (!text) return;
@@ -13,7 +25,7 @@ function Form({ addItem }: { addItem: (item: TodoItem) => void }) {
       completed: false,
     };
 
-    addItem(result);
+    handleAddItem(result);
     setTask('');
   }
   return (
